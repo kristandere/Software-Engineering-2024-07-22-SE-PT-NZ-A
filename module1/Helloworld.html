@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>hello world</title>
+<link rel="stylesheet" href="hello world.css">
+</head>
+<body>
+    <header>
+        <header><h1 id="header">Header</h1></header>
+    </header>
+    <section>
+    <nav>
+    <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Articles</a></li>
+    </ul>
+    </nav>
+    <article>
+    <h2>Article heading</h2>
+    <img height="100" width="100" src="https://cdn.britannica.com/24/189624-131-BAF1184D/Mona-Lisa-oil-wood-panel-Leonardo-da.jpg">
+    <p> real mona lisa painting : $5</p>
+    <div>
+        <label for="firstName">Name</label><br>
+        <input type="text" id="firstName"
+        name="firstName">
+        </div>
+        <div>
+        <label for="Address">Address</label><br>
+        <input type="text" id="lastName"
+        name="lastName" >
+        <button onclick="yes()">Order now</bu
+            tton>
+        <p id="demo"></p>
+        </div>       
+    <p id="demo"></p>
+    <p>Paragraph...</p>
+    <a href="https://www.google.com/">More information...</a>
+    </article>
+    <aside id="aside">
+    <h2>Related</h2>
+    <ul>
+    <li><a href="#">Article 1</a></li>
+    <li><a href="#">Article 2</a></li>
+    </ul>
+    </aside>
+    </section>
+    <footer>
+    <p>@copyright 2050 by nobody. all rights reversed</p>
+    </footer>
+    <script>
+        document.getElementById("header").innerText =
+        'Hello JavaScript';
+        document.getElementById("aside").style.backgroundColor =
+        'green';
+    
+
+        function yes()
+{
+    document.getElementById("demo").innerHTML="Your order will be shipped soon";
+}
+
+    </script>
+
+    </body>
+    </html>
