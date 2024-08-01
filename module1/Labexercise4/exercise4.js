@@ -14,3 +14,16 @@ function sayHello(){
 }
 
 sayHello()
+
+function outer() {
+    const name = "Kris";
+  
+    function inner() {
+      console.log(`Hello, ${name}!`);
+    }
+  
+    return inner;
+  }
+  
+  const greeting = outer();
+  greeting();
