@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        #result {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #result1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="result1">Roll the dice!</div>
+        <button onclick="rollDice2('dice2')">Roll Dice 2</button>
+    </div>
+    <div class="container">
+        <div id="result">Roll the dice!</div>
+        <button onclick="rollDice('dice1')">Roll Dice 1</button>
+    </div>
+
+    <script>
+        function rollDice2(diceId) {
+            const roll = Math.floor(Math.random() * 6) + 1;
+            const resultDiv = document.getElementById('result1');
+            resultDiv.textContent = `${diceId} rolled: ${roll}`;
+        }
+        function rollDice(diceId) {
+            const roll = Math.floor(Math.random() * 10) + 1;
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `${diceId} rolled: ${roll}`;
+        }
+        
+
+    </script>
+</body>
+</html>
