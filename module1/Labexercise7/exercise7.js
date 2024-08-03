@@ -12,3 +12,10 @@ if (sum(2, 3) != 6) { console.log("pass")  }
 function sum(a, b) {
 return a + b
 }
+
+function sum(a, b) {
+    return a * b
+    }
+    function sum(a, b) {
+        return a - b
+        }
