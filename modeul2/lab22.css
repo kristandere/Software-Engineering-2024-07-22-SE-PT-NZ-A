@@ -1,0 +1,104 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Dark gray for text */
+    background-color: #f4f4f9; /* Light gray background */
+    padding: 0;
+    margin: 0;
+}
+
+/* Header styles */
+header {
+    background: #2c3e50; /* Dark blue-gray background */
+    color: #ecf0f1; /* Light gray text color */
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Larger heading size */
+    color: #ecf0f1; /* Light gray for contrast */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #ecf0f1; /* Light gray text color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+nav ul li a:hover {
+    color: #3498db; /* Bright blue color on hover */
+}
+
+/* Main content styles */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background: #fff; /* White background for sections */
+    border: 1px solid #ddd; /* Light gray border for definition */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+section h2 {
+    font-size: 1.8rem; /* Slightly larger subheadings */
+    color: #3498db; /* Bright blue color for headings */
+    margin-bottom: 0.5rem;
+}
+
+section p {
+    font-size: 1rem;
+    color: #555; /* Medium gray text for readability */
+    line-height: 1.6;
+}
+
+/* Footer styles */
+footer {
+    background: #2c3e50; /* Dark blue-gray background to match header */
+    color: #ecf0f1; /* Light gray text color */
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
