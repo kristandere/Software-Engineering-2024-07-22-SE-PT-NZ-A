@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Demonstration</title>
+<style>
+body { margin: 0; font-family: sans-serif; font-size: 18px; }
+header { background: black; padding: 1em; }
+#logo { width: 60px; height: 60px; border-radius: 50%; background: #B200FF; }
+.menu {display: flex; flex-direction: row-reverse; list-style: none; padding: 0; margin: 0; color: yellow; }
+main { max-width: 80%; margin: 1em auto; }
+.box { border-radius: 1em; 
+        min-width: 250px; 
+        min-height: 250px; 
+        border: 2px solid #404040; 
+        background: #B2B2B2; 
+        margin: 1em; }
+#boxes {
+    display: flex;
+    justify-content: center;
+
+
+}
+</style>
+</head>
+<body>
+<header> <!-- flex container #1 -->
+<div id="logo"></div>
+<nav id="main-menu">
+<ul class="menu"> <!-- flex container #2-->
+<li>Menu #1</li><li>Menu #2</li><li>Menu #3</li>
+</ul>
+</nav>
+</header>
+<main>
+<section id="boxes"> <!-- flex container #3 -->
+<div class="box"></div><div class="box"></div><div class="box"></div>
+</section>
+</main>
+</body>
+</html> <!-- this CodePen also demonstrates flexbox properties and usage: https://codepen.io/chriscoyier/pen/kNZRER -->

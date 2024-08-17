@@ -1,0 +1,10 @@
+body { background: rgb(249, 247, 247); background-size: cover; font-family: sans-serif; }
+body, ul, li { margin: 0; }
+header { background: midnightblue; color: white; }
+nav ul.menu { list-style: none; padding: 0; display: flex; }
+nav ul.menu li { padding: 1em; }
+main { max-width: 80%; margin: 1em auto; background: rgb(250, 250, 250); }
+section#about { border: 1px solid grey; padding: 1em; }
+button { background: midnightblue; color: white; font-weight:
+bold; padding: 0.5em 1em; }
+#about button { font-size: 18px; }
