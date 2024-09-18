@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Select Element</h1>
+    
+    <p>
+    Select an operation
+    </p>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" required>
+
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" required>
+
+    <label for="cars">Choose Operation</label>
+    <select name="operator" id="operator">
+        <option value="/">/</option>
+        <option value="+">+</option>
+        <option value="*">*</option>
+        <option value="-">-</option>
+    </select>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h2>Result: <span id="result"></span></h2>
+
+</body>
+<script>
+
+        function operatorSelected() {
+        }
+
+        function calculate() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const operator = document.getElementById("operator").value;
+            let result;
+
+            if (operator == "+") {
+                result = num1 + num2;
+            } else if (operator == "-") {
+                result = num1 - num2;
+            } else if (operator == "*") {
+                result = num1 * num2;
+            } else if (operator == "/") {
+                result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</script>
+
+</html>
