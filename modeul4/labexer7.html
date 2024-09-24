@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Slider Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            position: relative;
+            height: 300px; 
+            width: 300px; 
+            overflow: hidden;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px; 
+            height: 100px; 
+            background-color: red;
+            animation: slide 2s infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                top: 0;
+                background-color: red;
+            }
+            50% {
+                top: calc(100% - 100px);
+                background-color: rgb(17, 179, 3);
+            }
+            100% {
+                top: 0;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider"></div>
+    </div>
+</body>
+</html>
