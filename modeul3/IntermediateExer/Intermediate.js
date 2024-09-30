@@ -10,6 +10,7 @@ function ucFirstLetters(str) {
 }
 console.log(ucFirstLetters("los angeles"))
 
+
 //2
 
 function truncate(str, max) {
@@ -21,6 +22,7 @@ function truncate(str, max) {
 }
 
 console.log(truncate('This text will be truncated if it is too long', 25));
+
 
 //3
 
@@ -56,7 +58,10 @@ console.log(camelCaseForEach('margin-left')); // marginLeft
 console.log(camelCaseForEach('background-image')); // backgroundImage
 console.log(camelCaseForEach('display')); // display
 
+
 //5
+
+
 
 //6
 
@@ -68,6 +73,9 @@ const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
 console.log(unique(colours)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
 console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
 
+
+
+
 //7
 
 const books = [
@@ -78,7 +86,43 @@ const books = [
     { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
     ];
 
+
+
+
 //8
+
+
+const phoneBookABC = new Map()
+phoneBookABC.set('Annabelle', '0412312343')
+phoneBookABC.set('Barry', '0433221117')
+phoneBookABC.set('Caroline', '0455221182')
+
+
+const initialEntriesDEF = [
+    ['Krim', '0412345678'],
+    ['Kents', '0412345679'],
+    ['Krit', '0412345670']
+];
+const phoneBookDEF = new Map(initialEntriesDEF);
+
+phoneBookABC.set('Caroline', '0477777776');
+
+function printPhoneBook(contacts) {
+    contacts.forEach((phoneNumber, name) => {
+        console.log(`${name}: ${phoneNumber}`);
+    });
+};
+
+const combinedPhoneBook = new Map(phoneBookABC);
+phoneBookDEF.forEach((phoneNumber, name) => {
+    combinedPhoneBook.set(name, phoneNumber);
+});
+
+printPhoneBook(combinedPhoneBook);
+
+
+
+
 
 //9
 
@@ -114,4 +158,41 @@ function topEarner(salaries) {
 console.log(salaries)
 console.log(sumSalaries(salaries));
 console.log(topEarner(salaries));
+
+
 //10
+
+const today = new Date();
+console.log('Current time is ' + today.toLocaleTimeString());
+console.log(today.getHours() + ' hours have passed so far today');
+
+const minutesPassed = today.getHours() * 60 + today.getMinutes();
+console.log(minutesPassed + ' minutes have passed so far today');
+
+const secondsPassed = today.getHours() * 3600 + today.getMinutes() * 60 + today.getSeconds();
+console.log(secondsPassed + ' seconds have passed so far today');
+
+function calculateAge(birthDate) {
+    const now = new Date();
+    let years = now.getFullYear() - birthDate.getFullYear();
+    let months = now.getMonth() - birthDate.getMonth();
+    let days = now.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+        months--;
+        days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+    }
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    return { years, months, days };
+}
+
+function daysInBetween(date1, date2) {
+    const oneDay = 24 * 60 * 60 * 1000;
+    const diffTime = Math.abs(date2 - date1);
+    return Math.floor(diffTime / oneDay); 
+}

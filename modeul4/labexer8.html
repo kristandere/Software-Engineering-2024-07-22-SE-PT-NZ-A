@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moment DateTime Format</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+</head>
+<body>
+    <h2>Moment Date</h2>
+    <div id="displayMoment"></div>
+    <h2>JavaScript Date</h2>
+    <div id="displayJsDate"></div>
+
+    <h2>Calculations</h2>
+    <div id="calculations"></div>
+
+    <h2>Current Time in London</h2>
+    <div id="currentTimeLondon"></div>
+
+    <script type="text/javascript">
+    (function() {
+        let nowMoment = moment();
+        let nowDate = new Date();
+        
+        document.getElementById('displayMoment').innerHTML = nowMoment.format('MMMM Do YYYY, h:mm:ss a');
+        document.getElementById('displayJsDate').innerHTML = nowDate.toString();
+
+        const birthdate = moment('1990-01-01');
+        const daysDifference = nowMoment.diff(birthdate, 'days');
+        
+        const years = nowMoment.diff(birthdate, 'years');
+        const months = nowMoment.diff(birthdate.add(years, 'years'), 'months');
+        const days = nowMoment.diff(birthdate.add(months, 'months'), 'days');
+
+        const date1 = moment('2023-09-01');
+        const date2 = moment('2023-09-15');
+        const closestDate = nowMoment.diff(date1) < nowMoment.diff(date2) ? date1 : date2;
+
+        const comparisonMessage = date1.isBefore(date2) ? 'Date1 is before Date2' : 'Date1 is after Date2';
+        const londonTime = nowMoment.tz('Europe/London').format('h:mm:ss a');
+
+        document.getElementById('calculations').innerHTML = `
+            Days since birth: ${daysDifference}<br>
+            ${years} years, ${months} months, and ${days} days since birth<br>
+            Closest date to now: ${closestDate.format('MMMM Do YYYY')}<br>
+            ${comparisonMessage}
+        `;
+
+        document.getElementById('currentTimeLondon').innerHTML = `Current time in London: ${londonTime}`;
+    })();
+    </script>
+</body>
+</html>

@@ -29,6 +29,13 @@
             <p class="news-content"></p>
         </div>
     </template>
+
+    <h2>Add News Item</h2>
+    <input type="text" id="news-title" placeholder="News Title" required>
+    <input type="text" id="news-content" placeholder="News Content" required>
+    <button id="add-news-button">Add News</button>
+    <button id="stop-refresh-button">Stop Refresh</button>
+
 <script>
     let news = [
     { id: 1, title: 'Election Results', content: "Newly elected minister..." },
@@ -60,8 +67,26 @@ function refreshNews() {
         getNews().then(news => news.forEach(newsItem => addCard(newsItem)));
     }
 
-    refreshNews(); 
-    setInterval(refreshNews, 5000);
+        let refreshInterval = setInterval(refreshNews, 5000);
+        refreshNews();
+
+        document.getElementById('add-news-button').addEventListener('click', () => {
+            const title = document.getElementById('news-title').value;
+            const content = document.getElementById('news-content').value;
+
+            if (title && content) {
+                const newNewsItem = { id: news.length + 1, title, content };
+                news.push(newNewsItem); 
+                document.getElementById('news-title').value = '';
+                document.getElementById('news-content').value = '';
+                refreshNews(); 
+            }
+        });
+
+        document.getElementById('stop-refresh-button').addEventListener('click', () => {
+            clearInterval(refreshInterval);
+            alert('News refresh stopped.');
+        });
 
 </script>
 </body>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCharts</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+</head>
+<body>
+
+    <div id="main" style="width: 900px; height: 600px;"></div>
+    <script type="text/javascript">
+
+        let myChart = echarts.init(document.getElementById('main'));
+
+
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(data => {
+
+                const categoryCounts = {};
+                data.forEach(product => {
+                    const category = product.category;
+                    categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+                });
+
+
+                const categories = Object.keys(categoryCounts);
+                const counts = Object.values(categoryCounts);
+
+                let options = {
+                    title: { text: 'Number of Products by Category' },
+                    xAxis: {
+                        type: 'category',
+                        data: categories
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                        name: '# products',
+                        type: 'bar',
+                        data: counts
+                    }]
+                };
+
+                myChart.setOption(options);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
