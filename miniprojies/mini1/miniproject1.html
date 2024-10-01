@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Food Posts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2 blue-column"></div>
+            <div class="col-md-8 text-center">
+                <div class="wrapper">
+                    <h1 class="animated-title">Restaurant Listings</h1>
+                    <div class="form-group select-location">
+                        <label for="locationSelect">Select Location:</label>
+                        <select id="locationSelect" class="form-control mb-3">
+                            <option value="all">All Locations</option>
+                            <option value="new-york">New York</option>
+                            <option value="los-angeles">Los Angeles</option>
+                            <option value="chicago">Chicago</option>
+                            <option value="miami">Miami</option>
+                        </select>
+                    </div>
+                    <div class="recents">
+                        <h2>Recents</h2>
+                    </div>
+                    <div class="row" id="restaurant-container"></div>
+                </div>
+            </div>
+            <div class="col-md-2 blue-column"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
