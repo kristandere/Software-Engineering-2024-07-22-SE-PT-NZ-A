@@ -35,7 +35,6 @@ const prependRestaurants = (items) => {
     });
 };
 
-
 const filterByLocation = () => {
     const selectedLocation = locationSelect.value;
     const filteredRestaurants = selectedLocation === 'all' 

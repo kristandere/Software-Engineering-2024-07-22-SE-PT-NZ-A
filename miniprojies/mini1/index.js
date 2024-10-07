@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const app = express();
 const port = 3000;
@@ -16,6 +17,7 @@ const restaurants = [
 app.get('/restaurants', (req, res) => {
     res.json(restaurants);
 });
+console.log(restaurants);
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
