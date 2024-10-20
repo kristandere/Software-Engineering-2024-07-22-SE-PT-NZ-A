@@ -1,0 +1,181 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Calculator API",
+      "description": "API for performing basic arithmetic operations.",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/Calculate",
+    "tags": [
+      {
+        "name": "Calculator",
+        "description": "Operations for arithmetic calculations"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+      "/add": {
+        "get": {
+          "tags": ["Calculator"],
+          "summary": "Add two numbers",
+          "parameters": [
+            {
+              "name": "num1",
+              "in": "query",
+              "description": "The first number",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "num2",
+              "in": "query",
+              "description": "The second number",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The result of addition",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "res": {
+                    "type": "integer",
+                    "example": 5
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/subtract": {
+        "get": {
+          "tags": ["Calculator"],
+          "summary": "Subtract two numbers",
+          "parameters": [
+            {
+              "name": "num1",
+              "in": "query",
+              "description": "The first number",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "num2",
+              "in": "query",
+              "description": "The second number",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The result of subtraction",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "res": {
+                    "type": "integer",
+                    "example": 3
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/multiply": {
+        "get": {
+          "tags": ["Calculator"],
+          "summary": "Multiply two numbers",
+          "parameters": [
+            {
+              "name": "num1",
+              "in": "query",
+              "description": "The first number",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "num2",
+              "in": "query",
+              "description": "The second number",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The result of multiplication",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "res": {
+                    "type": "integer",
+                    "example": 10
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/divide": {
+        "get": {
+          "tags": ["Calculator"],
+          "summary": "Divide two numbers",
+          "parameters": [
+            {
+              "name": "num1",
+              "in": "query",
+              "description": "The first number",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "num2",
+              "in": "query",
+              "description": "The second number",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The result of division",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "res": {
+                    "type": "number",
+                    "example": 2.5
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid input or Division by zero"
+            }
+          }
+        }
+      }
+    }
+  }
