@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './logo.svg';
 import BitcoinRates from './components/BitcoinRates';
 import './App.css';

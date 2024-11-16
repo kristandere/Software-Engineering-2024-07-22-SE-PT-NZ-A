@@ -1,27 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
+import Emoji from './components/Emoji';
 import BitcoinRates from './components/BitcoinRates';
-import './App.css';
+import { EmojiProvider } from './context/EmojiContext'; 
 
 function App() {
   return (
-    <div className="App">
-       <BitcoinRates />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-       
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <EmojiProvider>
+      <div>
+        <h1>Bitcoin and Mood App</h1>
+        <Emoji />
+        <BitcoinRates />
+      </div>
+    </EmojiProvider>
   );
 }
 
